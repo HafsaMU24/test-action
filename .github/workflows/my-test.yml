@@ -1,9 +1,19 @@
 name: Test Action
-on: [push]
+on: [pull_request]
 jobs:
   exampel:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: print push success
-        run: echo 'push successful'
+        run: echo 'pull-request successful!'
+
+  print:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v4
+       - name: print files
+         run: ls -la
+
+
+
